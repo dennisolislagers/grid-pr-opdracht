@@ -1,1 +1,68 @@
 /*Maak hier jouw CSS!*/
+.grid-container {
+    background-color: antiquewhite;
+    display: grid;
+    row-gap: 16px;
+    column-gap: 16px;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 240px 100px auto 50px;
+    grid-template-areas:
+    "header aside-first aside-first"
+    "main aside-first aside-first"
+    "main aside-third aside-second"
+    "main aside-third ."
+    "footer footer footer";
+}
+
+@media screen and (max-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+        "header"
+        "main"
+        "aside-first"
+        "aside-second"
+        "aside-third"
+        "."
+        "footer";
+    }
+}
+
+.grid-item {
+    padding: 16px;
+    color: antiquewhite;
+    background-color: #c41e3d;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: #7d1128;
+
+}
+
+#grid-header {
+    grid-area: header;
+}
+
+#grid-main {
+    grid-area: main;
+}
+
+#grid-aside-first {
+    grid-area: aside-first;
+}
+
+#grid-aside-second {
+    grid-area: aside-second;
+}
+
+#grid-aside-third {
+    grid-area: aside-third;
+}
+
+#grid-footer {
+    grid-area: footer;
+}
